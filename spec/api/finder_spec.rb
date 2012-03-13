@@ -35,4 +35,13 @@ describe MusixMatch::API::Finder do
     MusixMatch::TrackFindResult.should_receive(:new).with(track_find_response)
     finder.find_track(track_id)
   end    
+
+  it "should call get artist.get and initialize an ArtistFinderResult" do 
+    finder = MusixMatch::API::Finder.new
+    artist_id = 1
+    artist_get_response = load_fixture('artist.get')
+    finder.should_receive(:get).with('artist.get', :artist_id => artist_id).and_return(artist_get_response)
+    MusixMatch::ArtistFindResult.should_receive(:new).with(artist_get_response)
+    finder.find_artist(artist_id)
+  end
 end

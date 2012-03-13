@@ -13,8 +13,10 @@ musix_match_path = File.dirname(__FILE__)
 ['api/base',
 'models/model',
 'models/lyrics',
+'artist_find_result',
 'lyrics_search_result',
 'track_search_result',
+'related_artist_result',
 'api/search',
 'lyrics_find_result',
 'track_find_result',
@@ -22,7 +24,9 @@ musix_match_path = File.dirname(__FILE__)
 'api/finder',
 'api/track_chart',
 'api/feedback',
+'api/related_artist',
 'models/track',
+'models/artist',
 'instant_lyrics'].each do |lib|
   require musix_match_path + '/musix_match/' + lib
 end
@@ -46,6 +50,14 @@ module MusixMatch
   
   def self.get_track_chart(*args)
     Models::Track.get_chart(*args)
+  end
+
+  def self.get_artist(*args)
+    Models::Artist.get(*args)
+  end
+
+  def self.related_artists(*args)
+    Models::Artist.related_artists(*args)
   end
   
   def self.i_m_feeling_lucky(q)

@@ -55,6 +55,23 @@ Available options for the search_track methods are:
     puts "Lyrics id: #{track.lyrics_id}"
   end
 
+=== Getting artist
+
+  response = MusixMatch.get_artist(artist_id)
+  if response.status_code == 200 && artist = response.artist
+    puts "#{artist.artist_name}"
+  end
+
+=== Getting related artists
+
+  response = MusixMatch.related_artists(artist_id)
+  if response.status_code == 200 && artists = response.artist_list
+    artists.each do |a|
+      puts "#{a.artist_name}"
+    end
+  end
+
+
 === Are you feeling lucky?
 
   puts MusixMatch.i_m_feeling_lucky("Guns'n'Roses - Welcome to the jungle")

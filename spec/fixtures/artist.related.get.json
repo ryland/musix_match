@@ -1,0 +1,61 @@
+{
+  "message": {
+    "header": {
+      "status_code": 200,
+      "available": "20",
+      "execute_time": 0.077892065048218
+    },
+    "body": {
+      "artist_list": [
+        {
+          "artist": {
+            "artist_id": 99,
+            "artist_mbid": "382f1005-e9ab-4684-afd4-0bdae4ee37f2",
+            "artist_name": "2Pac",
+            "artist_alias_list": [
+              {
+                "artist_alias": "2 PAC"
+              },
+              {
+                "artist_alias": "TuPac"
+              },
+              {
+                "artist_alias": "Tupac Shakur"
+              },
+              {
+                "artist_alias": "Tupac Amaru Shakur"
+              },
+              {
+                "artist_alias": "2 Pac Fe. Dr. Dre"
+              },
+              {
+                "artist_alias": "2pac (Makaveli the Don)"
+              }
+            ]
+          }
+        },
+        {
+          "artist": {
+            "artist_id": 102,
+            "artist_mbid": "f82bcf78-5b69-4622-a5ef-73800768d9ac",
+            "artist_name": "Jay-Z",
+            "artist_alias_list": [
+              {
+                "artist_alias": "Jayz"
+              },
+              {
+                "artist_alias": "Jay Z"
+              },
+              {
+                "artist_alias": "Jay - Z"
+              },
+              {
+                "artist_alias": "Ja\u00ff-Z"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
