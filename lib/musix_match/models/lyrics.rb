@@ -3,7 +3,7 @@ module MusixMatch
     class Lyrics
       include Model
       
-      model_with_attributes :lyrics_id, :lyrics_body, :lyrics_language, :script_tracking_url, :lyrics_copyright, :track_name, :artist_name, :restricted
+      model_with_attributes :lyrics_id, :lyrics_body, :lyrics_language, :script_tracking_url, :html_tracking_url, :pixel_tracking_url, :lyrics_copyright, :track_name, :artist_name, :restricted, :updated_time
     end
   end
 end
