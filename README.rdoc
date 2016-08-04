@@ -11,15 +11,15 @@
     |          |                                                          |          |
     \          /                                                          \          /
      ----------                                                            ----------
- 
+
 == Installation
 
-  gem install musix_match    
+  gem install musix_match
 
 == Usage
 
   require 'musix_match'
-    
+
   MusixMatch::API::Base.api_key = 'YOUR_API_KEY'
 
 === Track search
@@ -39,14 +39,32 @@ Available options for the search_track methods are:
 * page: requested page of results
 * page_size: desired number of items per result page
 * f_has_lyrics: exclude tracks without an available lyrics
-    
+
+=== Artist search
+
+  response = MusixMatch.search_artist(:q_artist => 'Pantera')
+  if response.status_code == 200
+    response.each do |artist|
+      puts artist.artist_name
+    end
+  end
+
+Available options for the search_artist methods are:
+
+* q_artist: string to be searched among artists names
+* f_artist_id: filter results by a specific artist id
+* f_artist_mbid: filter results by a specific musicbrainz id
+* page: requested page of results
+* page_size: desired number of items per result page
+* format: decide the output format (json or xml)
+
 === Getting lyrics
 
   response = MusixMatch.get_lyrics(track_id)
   if response.status_code == 200 && lyrics = response.lyrics
     puts lyrics.lyrics_body
   end
-    
+
 === Getting track
 
   response = MusixMatch.get_track(track_id)
@@ -75,7 +93,7 @@ Available options for the search_track methods are:
 === Are you feeling lucky?
 
   puts MusixMatch.i_m_feeling_lucky("Guns'n'Roses - Welcome to the jungle")
-    
+
 == Lyrics
 
 The Lyrics object has the following attributes:
@@ -109,9 +127,9 @@ The track object has the following attributes:
 * album_coverart_100x100
 
 == Sending Feedback
-  
+
   MusixMatch.post_feedback(track_id, lyrics_id, feedback_type)
-  
+
 Feedback type should be one of the following:
 
 * *wrong_attribution* (the lyrics shown are not by the artist that I selected.)

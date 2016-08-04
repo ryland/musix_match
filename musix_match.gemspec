@@ -35,6 +35,7 @@ Gem::Specification.new do |s|
     "lib/musix_match/models/track.rb",
     "lib/musix_match/track_find_result.rb",
     "lib/musix_match/track_search_result.rb",
+    "lib/musix_match/artist_search_result.rb",
     "spec/api/base_spec.rb",
     "spec/api/feedback_spec.rb",
     "spec/api/finder_spec.rb",
@@ -49,6 +50,7 @@ Gem::Specification.new do |s|
     "spec/spec_helper.rb",
     "spec/track_find_result_spec.rb",
     "spec/track_search_result_spec.rb"
+    "spec/artist_search_result_spec.rb"
   ]
   s.homepage = %q{http://github.com/pilu/musix_match}
   s.rdoc_options = ["--main=README.rdoc", "--charset=UTF-8"]
@@ -70,6 +72,7 @@ Gem::Specification.new do |s|
     "spec/spec_helper.rb",
     "spec/track_find_result_spec.rb",
     "spec/track_search_result_spec.rb"
+    "spec/artist_search_result_spec.rb"
   ]
 
   if s.respond_to? :specification_version then

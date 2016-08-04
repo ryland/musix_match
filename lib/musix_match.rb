@@ -16,6 +16,7 @@ musix_match_path = File.dirname(__FILE__)
 'artist_find_result',
 'lyrics_search_result',
 'track_search_result',
+'artist_search_result',
 'related_artist_result',
 'api/search',
 'lyrics_find_result',
@@ -47,7 +48,10 @@ module MusixMatch
   def self.search_track(*args)
     Models::Track.search(*args)
   end
-  
+
+  def self.search_artist(*args)
+    Models::Artist.search(*args)
+  end
   def self.get_track_chart(*args)
     Models::Track.get_chart(*args)
   end
