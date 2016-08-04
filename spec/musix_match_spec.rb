@@ -6,31 +6,49 @@ describe MusixMatch do
     MusixMatch::Models::Lyrics.should_receive(:get).with(lyrics_id)
     MusixMatch.get_lyrics(lyrics_id)
   end
-  
+
   it "should call get on Track" do
     track_id = 1
     MusixMatch::Models::Track.should_receive(:get).with(track_id)
     MusixMatch.get_track(track_id)
   end
-  
+
   it "should call search on Lyrics" do
     params = { :q_artist => 'artist name' }
     MusixMatch::Models::Lyrics.should_receive(:search).with(params)
     MusixMatch.search_lyrics(params)
   end
-  
+
   it "should call search on Track" do
     params = { :q_artist => 'artist name' }
     MusixMatch::Models::Track.should_receive(:search).with(params)
     MusixMatch.search_track(params)
   end
-  
+
+  it "should call search on Artist" do
+    params = { :q_artist => 'artist name' }
+    MusixMatch::Models::Artist.should_receive(:search).with(params)
+    MusixMatch.search_artist(params)
+  end
+
+  it "should call albums on Artist" do
+    artist_id = 123
+    MusixMatch::Models::Artist.should_receive(:search).with(artist_id)
+    MusixMatch.get_artist_albums(artist_id)
+  end
+
+  it "should call tracks on Album" do
+    params = { :album_id => 123 }
+    MusixMatch::Models::Album.should_receive(:tracks).with(params)
+    MusixMatch.get_album_tracks(params)
+  end
+
   it "should call get_chart on Track" do
     params = { :country => 'it' }
     MusixMatch::Models::Track.should_receive(:get_chart).with(params)
     MusixMatch.get_track_chart(params)
   end
-  
+
   it "should call search on InstantLyrics::Search" do
     q = 'artist name track name'
     result = mock(MusixMatch::InstantLyrics::Result)
@@ -41,7 +59,7 @@ describe MusixMatch do
     MusixMatch::InstantLyrics::Search.should_receive(:search).with(q).and_return(result)
     MusixMatch.i_m_feeling_lucky(q)
   end
-  
+
   it "should call post_feedback on Feedback" do
     track_id = 1
     lyrics_id = 1
