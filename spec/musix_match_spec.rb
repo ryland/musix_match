@@ -31,6 +31,12 @@ describe MusixMatch do
     MusixMatch.search_artist(params)
   end
 
+  it "should call albums on Artist" do
+    artist_id = 123
+    MusixMatch::Models::Artist.should_receive(:search).with(artist_id)
+    MusixMatch.get_artist_albums(artist_id)
+  end
+
   it "should call get_chart on Track" do
     params = { :country => 'it' }
     MusixMatch::Models::Track.should_receive(:get_chart).with(params)

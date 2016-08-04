@@ -52,6 +52,11 @@ module MusixMatch
   def self.search_artist(*args)
     Models::Artist.search(*args)
   end
+
+  def self.get_artist_albums(*args)
+    Models::Artist.albums(*args)
+  end
+
   def self.get_track_chart(*args)
     Models::Track.get_chart(*args)
   end
