@@ -26,6 +26,7 @@ Gem::Specification.new do |s|
     "lib/musix_match/api/finder.rb",
     "lib/musix_match/api/search.rb",
     "lib/musix_match/api/artist.rb",
+    "lib/musix_match/api/album.rb",
     "lib/musix_match/api/track_chart.rb",
     "lib/musix_match/feedback_result.rb",
     "lib/musix_match/instant_lyrics.rb",
@@ -40,6 +41,7 @@ Gem::Specification.new do |s|
     "lib/musix_match/track_search_result.rb",
     "lib/musix_match/artist_search_result.rb",
     "lib/musix_match/artist_albums_result.rb",
+    "lib/musix_match/album_tracks_result.rb",
     "spec/api/base_spec.rb",
     "spec/api/feedback_spec.rb",
     "spec/api/finder_spec.rb",
@@ -53,7 +55,7 @@ Gem::Specification.new do |s|
     "spec/musix_match_spec.rb",
     "spec/spec_helper.rb",
     "spec/track_find_result_spec.rb",
-    "spec/track_search_result_spec.rb"
+    "spec/track_search_result_spec.rb",
     "spec/artist_search_result_spec.rb"
   ]
   s.homepage = %q{http://github.com/pilu/musix_match}
@@ -75,7 +77,7 @@ Gem::Specification.new do |s|
     "spec/musix_match_spec.rb",
     "spec/spec_helper.rb",
     "spec/track_find_result_spec.rb",
-    "spec/track_search_result_spec.rb"
+    "spec/track_search_result_spec.rb",
     "spec/artist_search_result_spec.rb"
   ]
 
