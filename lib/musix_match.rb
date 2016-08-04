@@ -17,6 +17,7 @@ musix_match_path = File.dirname(__FILE__)
 'lyrics_search_result',
 'track_search_result',
 'artist_search_result',
+'artist_albums_result',
 'related_artist_result',
 'api/search',
 'lyrics_find_result',
@@ -28,6 +29,7 @@ musix_match_path = File.dirname(__FILE__)
 'api/related_artist',
 'models/track',
 'models/artist',
+'models/album',
 'instant_lyrics'].each do |lib|
   require musix_match_path + '/musix_match/' + lib
 end

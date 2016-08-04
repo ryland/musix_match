@@ -89,6 +89,15 @@ Available options for the search_artist methods are:
     end
   end
 
+=== Getting artist albums
+
+  response = MusixMatch.get_artist_albums(artist_id)
+  if response.status_code == 200 && albums = response.album_list
+    albums.each do |a|
+      puts "#{a.album_name}"
+    end
+  end
+
 
 === Are you feeling lucky?
 
